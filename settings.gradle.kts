@@ -14,8 +14,8 @@ dependencyResolutionManagement {
   }
 }
 rootProject.name = "ColorPickerComposeDemo"
-include(":app")
+//include(":app")
 include(":colorpicker-compose")
-include(":benchmark")
-include("wasmApp")
-include("docs")
+//include(":benchmark")
+//include("wasmApp")
+//include("docs")

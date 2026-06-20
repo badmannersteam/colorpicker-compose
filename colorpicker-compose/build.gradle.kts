@@ -1,10 +1,10 @@
-@file:OptIn(ExperimentalWasmDsl::class)
+//@file:OptIn(ExperimentalWasmDsl::class)
 
 import com.github.skydoves.colorpicker.compose.Configuration
-import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+//import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
 plugins {
-  id(libs.plugins.android.library.get().pluginId)
+//  id(libs.plugins.android.library.get().pluginId)
   id(libs.plugins.kotlin.multiplatform.get().pluginId)
   id(libs.plugins.kotlin.serialization.get().pluginId)
   id(libs.plugins.jetbrains.compose.get().pluginId)
@@ -29,11 +29,11 @@ mavenPublishing {
   }
 }
 
-@OptIn(ExperimentalWasmDsl::class)
+//@OptIn(ExperimentalWasmDsl::class)
 kotlin {
-  androidTarget { publishLibraryVariants("release") }
+//  androidTarget { publishLibraryVariants("release") }
   jvm("desktop")
-  @Suppress("DEPRECATION")
+  /*@Suppress("DEPRECATION")
   iosX64()
   iosArm64()
   iosSimulatorArm64()
@@ -47,18 +47,18 @@ kotlin {
   wasmJs {
     browser()
     binaries.library()
-  }
+  }*/
 
   @Suppress("OPT_IN_USAGE")
   applyHierarchyTemplate {
     common {
       group("jvm") {
-        withAndroidTarget()
+//        withAndroidTarget()
         withJvm()
       }
       group("skia") {
         withJvm()
-        group("darwin") {
+        /*group("darwin") {
           group("apple") {
             group("ios") {
               withIosX64()
@@ -72,7 +72,7 @@ kotlin {
           }
           withJs()
           withWasmJs()
-        }
+        }*/
       }
     }
   }
@@ -92,7 +92,7 @@ kotlin {
   explicitApi()
 }
 
-android {
+/*android {
   compileSdk = Configuration.compileSdk
   namespace = "com.github.skydoves.colorpicker.compose"
   defaultConfig {
@@ -118,7 +118,7 @@ baselineProfile {
   filter {
     include("com.github.skydoves.colorpicker.compose.**")
   }
-}
+}*/
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
   compilerOptions {
